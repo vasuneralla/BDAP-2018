@@ -1,22 +1,18 @@
-data {
-    int<lower=0> N; // number of data points
-    int<lower=0> K; // number of groups
-    int<lower=1,upper=K> x[N]; // group indicator
-    vector[N] y; //
+data {  
+  int <lower=0> N; // Number of data points. 
+  int <lower=0> F; // Number of features
+  real y[N]; // Price
+  matrix[N,F] x; // Feature values
 }
 parameters {
-    real[18] mu0;             // prior mean
-    real[18]<lower=0> sigma0; // prior std
-    real[K][18] mu;         // group means
-    real<lower=0> sigma;  // common std
+  real intercept;
+  vector[F] theta;
+  real sigma;
+}
+transformed parameters{
+  vector[N] y_mean;
+  y_mean <- intercept + x*theta;
 }
 model {
-  mu ~ normal(mu0, sigma0); // population prior with unknown parameters
-  y ~ normal(mu[x,:]*y[x], sigma);
-}
-generated quantities{
-  real ypred7;
-  real mu7;
-  mu7 = normal_rng(mu0, sigma0);
-  ypred7 = normal_rng(mu7, sigma);
+  y ~ normal(y_mean,sigma);
 }
