@@ -15,6 +15,8 @@ model {
   y ~ normal(y_mean,sigma);
 }
 generated quantities {
-real ypred;
-ypred = normal_rng(y_mean, sigma);
+  real ypred;
+  real y_mean;
+  y_mean = intercept + x * theta;
+  ypred = normal_rng(y_mean, sigma);
 }
