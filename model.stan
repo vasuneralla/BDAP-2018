@@ -9,10 +9,8 @@ parameters {
   vector[F] theta;
   real sigma;
 }
-transformed parameters{
+model {
   vector[N] y_mean;
   y_mean <- intercept + x*theta;
-}
-model {
   y ~ normal(y_mean,sigma);
 }
