@@ -23,15 +23,15 @@ The label is supposedly the price of each house and the features of each house a
 * **date:** Date house was sold.
 * **bedrooms:** Number of bedrooms per house.
 * **bathrooms:** Number of bathrooms per bedrooms.
-* **sqft_livingsquare:** Footage of each home.
-* **sqft_lotsquare:** Footage of the lot.
+* **sqft_living:** Square Footage of each home.
+* **sqft_lot:** Square Footage of the lot.
 * **floors:** Total number of floors (levels) in each house.
 * **waterfront:** House which has a view to a waterfront.
 * **viewHas:** Houses which has been viewed.
 * **condition:** How good the condition is (Overall).
-* **gradeoverall:** The grade given to the housing unit, based on King County grading system.
-* **sqft_abovesquare:** Footage of house apart from the basement.
-* **sqft_basementsquare:** Footage of the basement
+* **grade:** Overall grade given to the housing unit based on King County grading system.
+* **sqft_above:** Square Footage of house apart from the basement.
+* **sqft_basement:** Square Footage of the basement
 * **yr_built:** The year in which the house was built.
 * **yr_renovated:** The year when house was renovated.
 * **zipcode:** Postal code of the house.
